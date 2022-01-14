@@ -1,54 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_printf_perc_x_X.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmoreau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 16:32:29 by qmoreau           #+#    #+#             */
-/*   Updated: 2022/01/09 12:23:42 by qmoreau          ###   ########.fr       */
+/*   Created: 2022/01/13 16:26:33 by qmoreau           #+#    #+#             */
+/*   Updated: 2022/01/14 17:00:30 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 #include "Libft/libft.h"
+#include "ft_printf.h"
 
-int	my_putstr_fd(char *s, int fd)
+int	fct_perc(va_list args)
 {
-	size_t	i;
+	char	c;
 
-	if (!s)
-		return (0);
-	i = 0;
-	while (i < ft_strlen(s))
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
-	return (i);
-}
-
-int	fct_c(va_list args)
-{
-	char c;
-
-	c = (char)va_arg(args, int);
+	c = '%';
 	write(1, &c, 1);
 	return (1);
 }
 
-int	fct_s(va_list args)
+int fct_x(va_list args)
 {
-	char	*s;
-	int		ret;
+	int	nb;
 
-	s = va_arg(args, char*);
-	ret = my_putstr_fd(s, 1);
-	return (ret);
+	nb = va_arg(args, int);
+
 }
-/*
-int	fct_p(va_list args)
-{
-	
-}
-*/

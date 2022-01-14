@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 13:37:08 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/01/07 14:36:11 by qmoreau          ###   ########.fr       */
+/*   Updated: 2022/01/14 15:30:04 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	filter(const char *format, long int pos, va_list args)
 	else if (format[pos + 1] == 'X')
 		return (fct_X(args));
 	else if (format[pos + 1] == '%')
-		return (fct_%(args));
+		return (fct_perc(args));
 */
 	write(1, &format[pos + 1], 1);
 	return (1);

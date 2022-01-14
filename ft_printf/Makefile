@@ -6,7 +6,7 @@
 #    By: qmoreau <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/06 14:04:05 by qmoreau           #+#    #+#              #
-#    Updated: 2022/01/07 15:15:05 by qmoreau          ###   ########.fr        #
+#    Updated: 2022/01/14 15:01:30 by qmoreau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,13 @@ NAME = libftprintf.a
 FLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_printf.c\
-	   ft_printf_utils\
-	   atoibase.c
+	   ft_printf_c_s_i.c\
+
 
 OBJS = $(SRCS:.c=.o)
 
-$(NAME) = $(OBJS)
-			cd Libft && $(MAKE)
+$(NAME) : $(OBJS)
+			cd Libft && $(MAKE) bonus
 			cp Libft/libft.a $(NAME)
 			ar -rcs $(NAME) $(OBJS)
 
@@ -39,8 +39,5 @@ fclean : clean
 		$(MAKE) fclean -C ./Libft
 
 re : fclean all
-
-%.o: %.c
-	$(CC) $(FLAGS) -I ft_printf.h -c $<  -o $(<:.c=.o)
 
 .PHONY : fclean clean re all
