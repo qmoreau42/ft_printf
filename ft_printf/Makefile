@@ -6,7 +6,7 @@
 #    By: qmoreau <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/06 14:04:05 by qmoreau           #+#    #+#              #
-#    Updated: 2022/01/14 15:01:30 by qmoreau          ###   ########.fr        #
+#    Updated: 2022/01/19 16:23:56 by qmoreau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ FLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_printf.c\
 	   ft_printf_c_s_i.c\
+	   ft_printf_perc_x_X.c\
+	   ft_printf_p_d_u.c
 
 
 OBJS = $(SRCS:.c=.o)

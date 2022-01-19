@@ -6,12 +6,26 @@
 /*   By: qmoreau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 16:26:33 by qmoreau           #+#    #+#             */
-/*   Updated: 2022/01/14 17:00:30 by qmoreau          ###   ########.fr       */
+/*   Updated: 2022/01/19 16:05:31 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Libft/libft.h"
 #include "ft_printf.h"
+
+void	ft_putnbr_base(long nbr, char *base, char *dest, int i)
+{
+	long	max;
+
+	max = i;
+	i--;
+	while (i >= 0)
+	{
+		dest[i] = base[nbr % ft_strlen(base)];
+		nbr = nbr / ft_strlen(base);
+		i--;
+	}
+}
 
 int	fct_perc(va_list args)
 {
@@ -24,8 +38,30 @@ int	fct_perc(va_list args)
 
 int fct_x(va_list args)
 {
-	int	nb;
+	long	nb;
+	char	*str;
+	int		len;
 
-	nb = va_arg(args, int);
+	nb = va_arg(args, long);
+	len = ft_len_nbr(nb, "0123456789abcdef");
+	str = malloc(sizeof(*str) * (len + 1));
+	ft_putnbr_base(nb, "0123456789abcdef", str, len);
+	ft_putstr_fd(str, 1);
+	free(str);
+	return (len);
+}
 
+int fct_x_sup(va_list args)
+{
+	long	nb;
+	char	*str;
+	int		len;
+
+	nb = va_arg(args, long);
+	len = ft_len_nbr(nb, "0123456789ABCDEF");
+	str = malloc(sizeof(*str) * (len + 1));
+	ft_putnbr_base(nb, "0123456789ABCDEF", str, len);
+	ft_putstr_fd(str, 1);
+	free(str);
+	return (len);
 }
