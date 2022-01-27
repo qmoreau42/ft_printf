@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 13:37:08 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/01/19 16:24:56 by qmoreau          ###   ########.fr       */
+/*   Updated: 2022/01/20 15:48:50 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,8 @@ int	filter(const char *format, long int pos, va_list args)
 		return (fct_c(args));
 	else if (format[pos + 1] == 's')
 		return (fct_s(args));
-	/*
 	else if (format[pos + 1] == 'p')
 		return (fct_p(args));
-	*/
 	else if (format[pos + 1] == 'd')
 		return (fct_d(args));
 	else if (format[pos + 1] == 'i')
@@ -98,10 +96,12 @@ int fct(const char *format, ...)
 int	main(void)
 {
 	int	ret;
+	char	a;
 	//char		str[30] = "0123456789jhgs;defiug%";
 
-	printf("%d\n%u\n", -44123, 123);
-	ret = ft_printf("%d\n%u\n", -44123, 123);
+	a = 's';
+	printf("%p\n%u\n", &a, 123);
+	ret = ft_printf("%p\n%u\n", &a, 123);
 	printf("%d", ret);
 	//fct(str, 56, "coucou", 56);
 	return (0);

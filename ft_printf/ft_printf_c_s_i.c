@@ -6,21 +6,21 @@
 /*   By: qmoreau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 16:32:29 by qmoreau           #+#    #+#             */
-/*   Updated: 2022/01/14 14:59:16 by qmoreau          ###   ########.fr       */
+/*   Updated: 2022/01/20 15:50:57 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "Libft/libft.h"
 
-long	ft_len_nbr(long nbr, char *base)
+long	ft_len_nbr(unsigned long long nbr, char *base)
 {
 	int	i;
 
 	i = 0;
-	while (nbr >= ft_strlen(base))
+	while (nbr >= (unsigned long long)ft_strlen(base))
 	{
-		nbr = nbr / ft_strlen(base);
+		nbr = nbr / (unsigned long long)ft_strlen(base);
 		i++;
 	}
 	return (i + 1);

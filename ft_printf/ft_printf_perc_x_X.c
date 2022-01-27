@@ -6,18 +6,15 @@
 /*   By: qmoreau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 16:26:33 by qmoreau           #+#    #+#             */
-/*   Updated: 2022/01/19 16:05:31 by qmoreau          ###   ########.fr       */
+/*   Updated: 2022/01/20 15:46:45 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Libft/libft.h"
 #include "ft_printf.h"
 
-void	ft_putnbr_base(long nbr, char *base, char *dest, int i)
+void	ft_putnbr_base(unsigned long long nbr, char *base, char *dest, int i)
 {
-	long	max;
-
-	max = i;
 	i--;
 	while (i >= 0)
 	{
@@ -36,7 +33,7 @@ int	fct_perc(va_list args)
 	return (1);
 }
 
-int fct_x(va_list args)
+int	fct_x(va_list args)
 {
 	long	nb;
 	char	*str;
@@ -51,7 +48,7 @@ int fct_x(va_list args)
 	return (len);
 }
 
-int fct_x_sup(va_list args)
+int	fct_x_sup(va_list args)
 {
 	long	nb;
 	char	*str;
