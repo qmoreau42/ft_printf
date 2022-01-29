@@ -6,7 +6,7 @@
 /*   By: qmoreau <qmoreau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:07:26 by qmoreau           #+#    #+#             */
-/*   Updated: 2021/12/01 17:33:04 by qmoreau          ###   ########.fr       */
+/*   Updated: 2022/01/29 17:37:19 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(long int n, int fd);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));

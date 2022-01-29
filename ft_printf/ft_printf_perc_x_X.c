@@ -6,7 +6,7 @@
 /*   By: qmoreau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 16:26:33 by qmoreau           #+#    #+#             */
-/*   Updated: 2022/01/20 15:46:45 by qmoreau          ###   ########.fr       */
+/*   Updated: 2022/01/29 18:38:08 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,7 @@
 
 void	ft_putnbr_base(unsigned long long nbr, char *base, char *dest, int i)
 {
-	i--;
-	while (i >= 0)
-	{
-		dest[i] = base[nbr % ft_strlen(base)];
-		nbr = nbr / ft_strlen(base);
-		i--;
-	}
+	if ()
 }
 
 int	fct_perc(va_list args)

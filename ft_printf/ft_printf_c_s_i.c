@@ -6,7 +6,7 @@
 /*   By: qmoreau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 16:32:29 by qmoreau           #+#    #+#             */
-/*   Updated: 2022/01/20 15:50:57 by qmoreau          ###   ########.fr       */
+/*   Updated: 2022/01/29 18:05:39 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	my_putstr_fd(char *s, int fd)
 
 int	fct_c(va_list args)
 {
-	char c;
+	char	c;
 
 	c = (char)va_arg(args, int);
 	write(1, &c, 1);
@@ -55,27 +55,12 @@ int	fct_s(va_list args)
 	char	*s;
 	int		ret;
 
-	s = va_arg(args, char*);
+	s = va_arg(args, char *);
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	ret = my_putstr_fd(s, 1);
 	return (ret);
 }
-
-int	fct_i(va_list args)
-{
-	int	nb;
-	int ret;
-
-	nb = va_arg(args, int);
-	ft_putnbr_fd(nb, 1);
-	ret = ft_len_nbr((long)nb, "0123456789");
-	if (nb < 0)
-		ret++;
-	return (ret);
-}
-
-/*
-int	fct_p(va_list args)
-{
-	
-}
-*/

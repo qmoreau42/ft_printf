@@ -6,14 +6,14 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 13:37:08 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/01/20 15:48:50 by qmoreau          ###   ########.fr       */
+/*   Updated: 2022/01/29 18:05:01 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Libft/libft.h"
 #include "ft_printf.h"
 
-long int my_read(const char *format, long int pos, long int *ret)
+long int	my_read(const char *format, long int pos, long int *ret)
 {
 	while (format[pos] != '%' && format[pos])
 	{
@@ -23,7 +23,6 @@ long int my_read(const char *format, long int pos, long int *ret)
 	}
 	return (pos);
 }
-
 
 int	filter(const char *format, long int pos, va_list args)
 {
@@ -38,7 +37,7 @@ int	filter(const char *format, long int pos, va_list args)
 	else if (format[pos + 1] == 'd')
 		return (fct_d(args));
 	else if (format[pos + 1] == 'i')
-		return (fct_i(args));
+		return (fct_d(args));
 	else if (format[pos + 1] == 'u')
 		return (fct_u(args));
 	else if (format[pos + 1] == 'x')
@@ -51,7 +50,7 @@ int	filter(const char *format, long int pos, va_list args)
 	return (1);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list				args;
 	long int			ret;
@@ -70,39 +69,17 @@ int ft_printf(const char *format, ...)
 	va_end(args);
 	return (ret);
 }
-
-int fct(const char *format, ...)
-{
-	//long int	pos;
-	//long int	ret;
-	va_list		ap;
-	char		*aw;
-	int 		az;
-
-	va_start(ap, format);
-	aw = va_arg(ap, char*);
-	az = va_arg(ap, int);
-	//az = va_arg(ap, char*);
-	va_end(ap);
-	//pos = 0;
-	//ret = 0;
-	//pos = my_read(format, pos, &ret);
-	//printf("--%ld--10--\n--%ld--10--", pos, ret);
-	printf("%s\n%d", aw, az);
-	return (0);
-	
-}
-
+/*
 int	main(void)
 {
-	int	ret;
+	int	ret, ret1;
 	char	a;
-	//char		str[30] = "0123456789jhgs;defiug%";
 
 	a = 's';
-	printf("%p\n%u\n", &a, 123);
-	ret = ft_printf("%p\n%u\n", &a, 123);
-	printf("%d", ret);
-	//fct(str, 56, "coucou", 56);
+	ret1 = printf("%d\n", -2147483648);
+	printf("%d\n", ret1);
+	ret = ft_printf("%d\n", -2147483648);
+	printf("%d\n", ret);
 	return (0);
 }
+*/
