@@ -6,7 +6,7 @@
 /*   By: qmoreau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 13:58:22 by qmoreau           #+#    #+#             */
-/*   Updated: 2022/01/29 16:59:32 by qmoreau          ###   ########.fr       */
+/*   Updated: 2022/02/16 18:00:45 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int		fct_x_sup(va_list args);
 int		fct_perc(va_list args);
 int		ft_printf(const char *format, ...);
 int		ft_atoi_base(char *str, char *base);
-void	ft_putnbr_base(unsigned long long nbr, char *base, char *dest, int i);
+void	ft_putnbr_base(unsigned long long nbr, char *base);
 
 #endif

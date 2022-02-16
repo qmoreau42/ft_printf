@@ -6,7 +6,7 @@
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 13:37:08 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/01/29 18:05:01 by qmoreau          ###   ########.fr       */
+/*   Updated: 2022/02/16 18:14:38 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,17 +69,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (ret);
 }
-/*
-int	main(void)
-{
-	int	ret, ret1;
-	char	a;
-
-	a = 's';
-	ret1 = printf("%d\n", -2147483648);
-	printf("%d\n", ret1);
-	ret = ft_printf("%d\n", -2147483648);
-	printf("%d\n", ret);
-	return (0);
-}
-*/

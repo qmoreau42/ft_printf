@@ -6,7 +6,7 @@
 /*   By: qmoreau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:14:16 by qmoreau           #+#    #+#             */
-/*   Updated: 2022/01/29 18:02:47 by qmoreau          ###   ########.fr       */
+/*   Updated: 2022/02/16 18:12:39 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ int	fct_p(va_list args)
 	int					len;
 
 	ad = va_arg(args, unsigned long long);
+	if (ad == 0)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
 	len = ft_len_nbr(ad, "0123456789abcdef");
 	write(1, "0x", 2);
-	str = malloc(len);
-	ft_putnbr_base(ad, "0123456789abcdef", str, len);
-	ft_putstr_fd(str, 1);
-	free (str);
+	ft_putnbr_base(ad, "0123456789abcdef");
 	return (len + 2);
 }
 
