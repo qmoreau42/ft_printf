@@ -6,7 +6,7 @@
 /*   By: qmoreau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:14:16 by qmoreau           #+#    #+#             */
-/*   Updated: 2022/02/16 18:12:39 by qmoreau          ###   ########.fr       */
+/*   Updated: 2022/02/23 21:11:00 by qmoreau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	fct_p(va_list args)
 	ad = va_arg(args, unsigned long long);
 	if (ad == 0)
 	{
-		write(1, "(nil)", 5);
-		return (5);
+		write(1, "0", 1);
+		return (1);
 	}
 	len = ft_len_nbr(ad, "0123456789abcdef");
 	write(1, "0x", 2);
